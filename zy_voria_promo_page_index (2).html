@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZyVoria — Minecraft Server (Java & Bedrock)</title>
+  <meta name="description" content="ZyVoria • Survival Economy • Java: zyvoria.id • Bedrock: zyvoria.id :19132" />
+  <meta property="og:title" content="ZyVoria — Minecraft Server" />
+  <meta property="og:description" content="Survival Economy • Java: zyvoria.id • Bedrock: zyvoria.id :19132" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b5ed7" />
+  <style>
+    :root {
+      --bg: #0b3f91;
+      --bg-dark: #072b64;
+      --card: #0d47a1;
+      --text: #eef6ff;
+      --muted: #b6d2ff;
+      --accent: #62f06c;
+      --accent-2: #53d1ff;
+      --danger: #ff5a5f;
+      --shadow: 0 15px 40px rgba(0,0,0,.25);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, #1653c4 0, transparent 60%),
+                  radial-gradient(1000px 600px at 120% 10%, #0a66cf 0, transparent 55%),
+                  linear-gradient(180deg, var(--bg) 0, var(--bg-dark) 100%);
+      display: grid;
+      place-items: center;
+      padding: 28px 16px 56px;
+    }
+
+    .wrap { width: 100%; max-width: 880px; }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 18px;
+      animation: fadeIn .9s ease both;
+    }
+    .badge { 
+      display: inline-block; 
+      padding: 6px 12px; 
+      border: 1px solid rgba(255,255,255,.2); 
+      border-radius: 999px; 
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    h1 { font-size: clamp(28px, 6vw, 48px); margin: 12px 0 4px; line-height: 1.08; }
+    .tag { color: var(--muted); margin-top: 8px; font-size: clamp(14px, 2.8vw, 18px); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .15s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 18px 50px rgba(0,0,0,.32); }
+
+    .card h2 { margin: 6px 0 12px; font-size: clamp(18px, 3.2vw, 24px); }
+    .line { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+    .key { opacity: .85; min-width: 64px; }
+    .value { font-weight: 800; letter-spacing: .2px; font-size: 18px; }
+
+    .btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    button {
+      appearance: none; border: 0; cursor: pointer;
+      padding: 10px 14px; border-radius: 12px; font-weight: 700;
+      background: #0ea5e9; color: #03101d;
+      box-shadow: 0 6px 20px rgba(3, 190, 252, .35);
+      transition: transform .06s ease, filter .2s ease, opacity .2s ease;
+    }
+    button:hover { filter: brightness(1.08); }
+    button:active { transform: translateY(1px) scale(.99); }
+    .copy-ok { background: #34d399; box-shadow: 0 6px 20px rgba(16,185,129,.35); }
+
+    .features {
+      margin-top: 26px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    @media (max-width: 720px) { .features { grid-template-columns: 1fr; } }
+    .feat { 
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 14px; padding: 12px 14px; text-align: center;
+    }
+
+    footer { text-align: center; opacity: .7; margin-top: 24px; font-size: 13px; }
+
+    .pixel { filter: drop-shadow(0 10px 0 rgba(0,0,0,.14)); }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform:none; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <span class="badge">Server Khusus Indonesia</span>
+      <h1>🎮 Minecraft Server: <strong>ZyVoria</strong></h1>
+      <p class="tag">🌍 Mode: <strong>Survival Economy</strong></p>
+    </header>
+
+    <section class="grid">
+      <!-- Java Card -->
+      <article class="card" id="java">
+        <h2>💻 Java Edition</h2>
+        <div class="line">
+          <span class="key">IP</span>
+          <span class="value" id="java-ip">zyvoria.id</span>
+        </div>
+        <div class="btns">
+          <button data-copy="java-ip">Copy IP (Java)</button>
+        </div>
+      </article>
+
+      <!-- Bedrock Card -->
+      <article class="card" id="bedrock">
+        <h2>📱 Bedrock Edition</h2>
+        <div class="line">
+          <span class="key">IP</span>
+          <span class="value" id="bedrock-ip">zyvoria.id</span>
+        </div>
+        <div class="line">
+          <span class="key">Port</span>
+          <span class="value" id="bedrock-port">19132</span>
+        </div>
+        <div class="btns">
+          <button data-copy="bedrock-ip">Copy IP (Bedrock)</button>
+          <button data-copy="bedrock-port">Copy Port</button>
+          <button data-copy-combo="bedrock">Copy IP:Port</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="features">
+      <div class="feat">💰 Economy seimbang, anti-P2W</div>
+      <div class="feat">🤝 Komunitas ramah & aktif</div>
+      <div class="feat">🛡️ Anti-cheat & staff responsif</div>
+    </section>
+
+    <footer>
+      <p>© ZyVoria — Ayo join & mulai petualanganmu!</p>
+    </footer>
+  </main>
+
+  <script>
+    // Copy helpers
+    function copyText(text) {
+      if (!navigator.clipboard) {
+        // fallback
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } finally { document.body.removeChild(ta); }
+        return Promise.resolve();
+      }
+      return navigator.clipboard.writeText(text);
+    }
+
+    function flash(btn) {
+      const original = btn.textContent;
+      btn.classList.add('copy-ok');
+      btn.textContent = '✓ Copied!';
+      setTimeout(() => { btn.classList.remove('copy-ok'); btn.textContent = original; }, 1200);
+    }
+
+    document.addEventListener('click', async (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+
+      // Copy single field
+      const id = btn.getAttribute('data-copy');
+      if (id) {
+        const val = document.getElementById(id)?.textContent?.trim();
+        if (val) { await copyText(val); flash(btn); }
+        return;
+      }
+
+      // Copy combo IP:Port for Bedrock
+      const combo = btn.getAttribute('data-copy-combo');
+      if (combo === 'bedrock') {
+        const ip = document.getElementById('bedrock-ip')?.textContent?.trim();
+        const port = document.getElementById('bedrock-port')?.textContent?.trim();
+        if (ip && port) { await copyText(`${ip}:${port}`); flash(btn); }
+        return;
+      }
+    });
+  </script>
+</body>
+</html>
